@@ -18,8 +18,8 @@ class PgDataSource
     begin
       @db = Sequel.postgres(@connection_hash)
     rescue Sequel::AdapterNotFound
-      @connection_hash.merge! host: ('jdbc:/postgresql://' + @connection_hash[:host])
-      @db = Sequel.connect @connection_hash
+      @connection_hash.merge! host: ('postgresql://' + @connection_hash[:host])
+      @db = Sequel.jdbc @connection_hash
     end
     @logger = @connection_hash[:logger] || Logger.new(STDOUT)
   end

@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'pg_datasource.rb'
+require_relative 'pg_datasource'
 
 class SiaWebservice < Sinatra::Base
   
@@ -26,6 +26,3 @@ class SiaWebservice < Sinatra::Base
     { stock_id: stock_id, best_order_metric: @db.get_best_order_metric(stock_id) }
   end
 end
-
-SiaWebservice.build(host: 'localhost', database: 'postgres', 
-                    user: 'postgres', password: 'postgres').run!
