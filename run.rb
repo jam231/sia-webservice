@@ -8,6 +8,5 @@ require_relative './lib/webservice'
 
 
 
-SiaWebservice.build(host: 'localhost', database: 'postgres', 
-                    user: 'postgres', password: 'postgres')
-              .run!
+SiaWebservice.setup_database(host: 'localhost', database: 'postgres', 
+                    		 user: 'postgres', password: 'postgres').run!
