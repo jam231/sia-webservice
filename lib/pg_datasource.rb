@@ -25,8 +25,7 @@ class PgDataSource
 
   # connection_hash = {host: ..., database: ..., user: ..., port: ..., password: ..., loggers: ...}
   def self.connect(connection_hash)
-    p connection_hash
-    self.new(connection_hash)
+    new(connection_hash)
   end
 
 
